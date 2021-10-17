@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<script type="text/javascript">
+        var opacity = 0;
+        var intervalID = 0;
+        window.onload = fadeIn;
+  
+        function fadeIn() {
+            setInterval(show, 200);
+        }
+  
+        function show() {
+            var body = document.getElementById("sting");
+            opacity = Number(window.getComputedStyle(body)
+                             .getPropertyValue("opacity"));
+            if (opacity < 1) {
+                opacity = opacity + 0.1;
+                body.style.opacity = opacity
+            } else {
+                clearInterval(intervalID);
+            }
+        }
+    </script>
+<style>
+    body { margin:0; }
+</style>
+
+<div class="sting">
+    <h1 class="display-4">Fields of Gold by Sting</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AM4nWq6mU9k?controls=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
